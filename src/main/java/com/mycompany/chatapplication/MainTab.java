@@ -42,7 +42,7 @@ public static void main(String[] args) {
     new Thread(() -> {
         try {
             System.out.println("Attempting to create server on port 5000...");
-            HttpServer server = HttpServer.create(new InetSocketAddress(5000), 0);
+            HttpServer server = HttpServer.create(new InetSocketAddress("0.0.0.0", 5000), 0);
 
             // Health Check
             server.createContext("/", exchange -> {
